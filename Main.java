@@ -55,7 +55,7 @@ public class Main {
         zbiorDni.add("sobota");
         zbiorDni.add("niedziela");
         for(String dzien : zbiorDni){
-           // System.out.println(dzien);
+            System.out.println(dzien);
         }
         
         
@@ -63,19 +63,19 @@ public class Main {
         //odp2 treeset
         //odp3 nie
         //-----------------------------ZADANIE 2-------------------------------------------
-       // System.out.println("Programowanie obiektowe, Nauczyciel - " + lista.get("Programowanie obiektowe" ));
-       // System.out.println("Programowanie kart, Nauczyciel - " + lista.get("Programowanie kart" ));
+        System.out.println("Programowanie obiektowe, Nauczyciel - " + lista.get("Programowanie obiektowe" ));
+        System.out.println("Programowanie kart, Nauczyciel - " + lista.get("Programowanie kart" ));
            
     
         String nrGrupy="32D";
         try{
             List<Student> studenci = lista_grup.get(nrGrupy);
             for(Student student : studenci){
-                 //   System.out.println(nrGrupy + " - " + student);
+                    System.out.println(nrGrupy + " - " + student);
             }
         }
         catch(Exception ex){
-           // System.out.println("Grupa nie istnieje");
+            System.out.println("Grupa nie istnieje");
         }
         
         
@@ -99,14 +99,14 @@ public class Main {
         }    
         System.out.println("Id  name   price   category");
         for(Product produkt : lista_produktow){
-         // System.out.println(produkt);
+          System.out.println(produkt);
         }
         
         Map<Integer,Product> mapa_produkty = new TreeMap<>();
         for(Product produkt : lista_produktow){
           mapa_produkty.put(produkt.getId(),produkt);
         }
-        //System.out.println(mapa_produkty.get(105));
+        System.out.println(mapa_produkty.get(105));
         
         Map<String,List<Product>> x_mapa_kategorii = new TreeMap<>();
         Integer counter=0;
@@ -118,12 +118,7 @@ public class Main {
                 
         for(Product produkt : lista_produktow){
            String kategoria = produkt.getCategory();
-          
-           List<Product> list = new ArrayList<Product>();
-           list =  x_mapa_kategorii.get(kategoria);
-           list.add(produkt);
-           x_mapa_kategorii.put(kategoria,list);
-           counter++;
+           x_mapa_kategorii.get(kategoria).add(produkt);
 
         }
           
